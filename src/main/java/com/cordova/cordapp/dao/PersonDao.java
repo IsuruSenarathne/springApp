@@ -3,6 +3,7 @@ package com.cordova.cordapp.dao;
 import com.cordova.cordapp.model.Person;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 public interface PersonDao {
@@ -13,5 +14,11 @@ public interface PersonDao {
         return insertPerson(id, person);
     }
 
-    List<Person> getPerson();
+    List<Person> getPersons();
+
+    Optional getPerson(UUID id);
+
+    int deletePerson(UUID id);
+
+    int updatePerson(UUID id);
 }
